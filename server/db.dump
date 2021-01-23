@@ -1,0 +1,116 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `faceprojekt`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gesichter`
+--
+
+CREATE TABLE `gesichter` (
+  `id` int(11) NOT NULL,
+  `person_id` int(11) NOT NULL,
+  `data` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gesichter_hash`
+--
+
+CREATE TABLE `gesichter_hash` (
+  `id` int(11) NOT NULL,
+  `hash` varchar(124) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personen`
+--
+
+CREATE TABLE `personen` (
+  `id` int(11) NOT NULL,
+  `vorname` varchar(50) NOT NULL,
+  `nachname` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `valid_device`
+--
+
+CREATE TABLE `valid_device` (
+  `id` int(11) NOT NULL,
+  `name` varchar(124) NOT NULL,
+  `api_key` varchar(124) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `valid_device`
+--
+
+INSERT INTO `valid_device` (`id`, `name`, `api_key`) VALUES
+(1, 'Demo Raspberry', '50b7ddfcab784fc952fca3c948bd502c');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `gesichter`
+--
+ALTER TABLE `gesichter`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gesichter_hash`
+--
+ALTER TABLE `gesichter_hash`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `personen`
+--
+ALTER TABLE `personen`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `valid_device`
+--
+ALTER TABLE `valid_device`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `gesichter`
+--
+ALTER TABLE `gesichter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `valid_device`
+--
+ALTER TABLE `valid_device`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
