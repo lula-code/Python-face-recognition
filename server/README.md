@@ -43,7 +43,7 @@ Der Server hat die Aufgabe eine REST-API anzubieten mit folgenden Funktionen:
    2. Python Projekt anlegen und ein Virtual Environment anlegen
 
       ```
-   sudo apt install python3-venv
+        sudo apt install python3-venv
         cd {ProjektOberOrdner}
         mkdir {ProjektOrdnerName}
         cd {ProjektOrdnerName}
@@ -82,7 +82,7 @@ Der Server hat die Aufgabe eine REST-API anzubieten mit folgenden Funktionen:
         1. `wsgi.py` mit `nano {ProjektOrdner}/wsgi.py` öffnen und folgendes einfügen:
         
             ```
-        from app import app
+            from app import app
             
             if __name__ == '__main__':
                 app.run()
@@ -93,21 +93,21 @@ Der Server hat die Aufgabe eine REST-API anzubieten mit folgenden Funktionen:
             ```
              gunicorn --bind 127.0.0.1:8080 wsgi:app
             ```
-   3. gunicorn mit Strg + C schließen und das ENV mit `deactivate` schließen
+        3. gunicorn mit Strg + C schließen und das ENV mit `deactivate` schließen
         
         4. `{ProjektOrdner}/nano gunicorn_config.py` öffnen und folgendes einsetzen:
         
        ```
         import multiprocessing
-            
-            workers = multiprocessing.cpu_count() * 2 + 1
+
+        workers = multiprocessing.cpu_count() * 2 + 1
         bind = 'unix:flaskrest.sock'
         umask = 0o007
-            reload = True
-            #logging
-                accesslog = '-' ###############
-                errorlog = '-'  #################
-            ```
+        reload = True
+        #logging
+        accesslog = '-' ###############
+        errorlog = '-'  #################
+       ```
         
     6. Flask Service einrichten
 
@@ -231,7 +231,7 @@ Der Server hat die Aufgabe eine REST-API anzubieten mit folgenden Funktionen:
     sudo systemctl reload apache2
     ```
 
-7. ``{ProjektOrdner}/app.py ` mit der der `app.py` aus diesem **Repository** ersetzen
+7. `{ProjektOrdner}/app.py ` mit der der `app.py` aus diesem **Repository** ersetzen
 
 8. Die Parameter in der Datei `{ProjektOrdner}/config.py` anpassen.
 
