@@ -96,8 +96,10 @@ Der Raspberry wird grundlegend eingerichtet, sodass die face_recognition Bibliot
 
 ### Skripte
 
-- `addface.py` 
+- `add.py` 
   - Dieses Skript wird genutzt, um neue Gesichter zur Datenbank hinzuzufügen.
+- `remove.py` 
+  - Dieses Skript wird genutzt, um eine Person und dessen Gesichter zu löschen.
 - `scanner.py` 
   - Sucht in Dauerschleife nach Gesichtern vor der Kamera und fragt den Server an ob diese Person Zugang zur Tür erhalten dürfen.
   - Nur nach erfolgreicher Verifikation durch den Server wird der Zugang gewährt
